@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="/images/favicon.png" rel="icon">
+  <title>OTP Verification</title>
+  <style>
+    /* CSS for black color scheme */
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    input[type="text"] {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #ff9800;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>OTP Verification</h1>
+  
+    <form  method="post" action="/verify" >
+     
+      <label for="otp">Enter OTP:</label>
+      <div id="mess" style="color: red; padding-bottom: 1rem;font-size:smaller; font-weight: 600;"></div>
+      <input type="text" id="otp" name="otp" placeholder="Enter OTP">
+      <% if (message) { %>
+        <div class="alert alert-danger"><p><%= message %></p></div>
+      <% } %>
+      <input type="submit" value="Verify OTP">
+
+    </form>
+
+  </div>
+ 
+ 
+</body>
+</html>

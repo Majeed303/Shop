@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+
+</head>
+<body>
+    <div style="padding-bottom: 4rem;color: transparent;">ddd</div>
+
+  <div class="container ">
+    <h1 class="text-center" style="font-weight: 800;">Edit banner</h1>
+
+
+    <form  action="/admin/addbann"  method="post" enctype="multipart/form-data" class="upload-form">
+
+      <div class="form-group">
+        <label for="name">Content :</label>
+        <input type="text" class="form-control" id="name" name="Tag" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Paragaph</lCabel>
+        <textarea class="form-control" id="description" name="Paragaph" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select class="form-control" name="name" required>
+          <option value="MAINBANNER">MAINBANNER</option>
+          <option value="MEN BANNER">MEN BANNER</option>
+          <option value="KID BANNER">KID BANNER</option>
+          <option value="WOMEN BANNER">WOMEN BANNER</option>
+        </select>
+      </div>
+
+       <div>
+       <label for="image">Image:</label>
+        <input type="file" class="form-control-file"  name="image1" style="padding-bottom: 1rem;" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+     <a href="/admin/banner" class="btn btn-dark">Back to products</a>
+    </form>
+    </div>
+  </div>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  
+</body>
+</html>

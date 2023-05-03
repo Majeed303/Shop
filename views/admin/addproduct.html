@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Product Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    /* Style for the container */
+    .container {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 0 auto;
+      width: 50%;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div style="padding-bottom: 4rem;color: transparent;">ddd</div>
+
+  <div class="container ">
+    <h1 class="text-center" style="font-weight: 800;">Product Form</h1>
+
+
+    <form id="myForm" action="/admin/addproduct" enctype="multipart/form-data" method="post">
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter product name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" class="form-control" id="price" placeholder="Enter product price" name="price">
+      </div>
+
+      <div class="form-group">
+        <label for="price">Brand:</label>
+        <input type="text" class="form-control" id="brand" placeholder="Enter product price" name="brand">
+      </div>
+
+      <label style="color: red; font-weight: 800;">Size:</label>
+      
+      <label for="small">Small</label>
+      <input type="checkbox" id="small" name="size" value="S" >
+
+      
+      <label for="medium">Medium</label>
+      <input type="checkbox" id="medium" name="size" value="M">
+
+     
+      <label for="large">Large</label>
+      <input type="checkbox" id="large" name="size" value="L">
+
+
+
+
+      <div class="form-group">
+        <label for="price">Count</label>
+        <input type="number" class="form-control" id="count" placeholder="Enter product count " name="count">
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select class="form-control" id="category" name="category">
+          <option>men</option>
+          <option>kid</option>
+          <option>women</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="Image">Image 1:</label>
+        <input type="file" class="form-control-file" id="image1" name="image1">
+      </div>
+
+      <div class="form-group">
+        <label for="Image2">Image 2:</label>
+        <input type="file" class="form-control-file" id="image2" name="image2">
+      </div>
+
+      <div class="form-group">
+        <label for="Image2">Image 3:</label>
+        <input type="file" class="form-control-file" id="image3" name="image3">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a href="/admin/products.html" class="btn btn-dark">Back to products</a>
+    </form>
+  </div>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+ <script>
+  $("#myForm").submit((e) => {
+  e.preventDefault();
+
+  if (
+    $("#name").val() === "" ||
+    $("#price").val() === "" ||
+    $("#brand").val() === "" ||
+    $("#count").val() === "" ||
+    $("#category").val() === "" ||
+    $("image1").val() === "" ||
+    $("image2").val() === "" ||
+    $("image3").val() === "" 
+
+  ) {
+    alert("Please fill out the form completely.");
+    return;
+  }
+
+  if ($('input[name="size"]:checked').length === 0) {
+      alert("Please select a size.");
+        return;
+      }
+
+  // If all fields are filled, submit the form
+  $("#myForm")[0].submit();
+});
+
+ </script>
+
+</body>
+
+</html>
